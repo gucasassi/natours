@@ -1,4 +1,5 @@
 // Importing required modules
+import colors from "colors";
 import dotenv from "dotenv";
 import express from "express";
 
@@ -18,5 +19,5 @@ const PORT = process.env.APP_PORT || 3000;
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`.yellow);
 });
