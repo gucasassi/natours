@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: natours-back
+  namespace: natours
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: natours-back
+  template:
+    metadata:
+      labels:
+        app: natours-back
+    spec:
+      containers:
+        - name: natours-back
+          image: gucasassi/natours-back:1.0.0
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-config
+                  key: app_port

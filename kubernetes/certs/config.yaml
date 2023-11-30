@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cert-vars
+  namespace: natours
+data:
+  #########The next 2 vars are for the cert management
+  namespace: "natours"
+  clusterfqdn: "natours.gucasassi.com"
+  admin_email: "gucasassi@gmail.com"

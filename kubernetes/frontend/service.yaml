@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: natours-front
+  namespace: natours
+spec:
+  selector:
+    app: natours-front
+  ports:
+    - port: 80
+      targetPort: 80
